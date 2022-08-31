@@ -8,23 +8,25 @@ export default function LoginPage() {
     <>
       <SEO title='Login' />
       <section className='flex flex-col w-screen h-screen'>
-        <article className='bg-white w-80 h-auto space-y-5 p-8 shadow-lg m-auto'>
-          <div>
-            <form>
-              <label>Username</label>
+        <article className='bg-white w-80 h-auto space-y-4 flex justify-center flex-col border-2 border-gray-300 rounded-md p-8 shadow-lg m-auto'>
+          <div className='space-y-4 flex justify-center flex-col'>
+            <form className='flex flex-col'>
+              <label className='font-light mb-2 tracking-wider'>Username</label>
               <input
+                className='border  p-2 rounded-md font-normal shadow-sm hover:shadow-md outline-none focus:border-blue-400 tracking-wider mb-1'
                 type='text'
                 placeholder='Username'
                 autocomplete='username'
               />
-              <label>Password</label>
+              <label className='font-light mb-2 tracking-wider'>Password</label>
               <input
+                className='border  p-2 rounded-md font-normal shadow-sm hover:shadow-md outline-none focus:border-blue-400 tracking-wider mb-1'
                 type='password'
                 placeholder='Password'
                 autocomplete='current-password'
               />
               <button
-                className='w-full bg-blue-600/80 text-white font-medium tracking-wider p-1 px-3'
+                className='w-full mt-6 bg-blue-600/80 text-white font-medium tracking-wider p-2 px-3'
                 type='submit'
               >
                 Login
