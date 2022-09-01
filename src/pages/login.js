@@ -8,46 +8,46 @@ export default function LoginPage() {
     <>
       <SEO title='Login' />
       <section className='flex flex-col w-screen h-screen'>
-        <article className='bg-white w-80 h-auto space-y-4 flex justify-center flex-col border-2 border-gray-300 rounded-md p-8 shadow-lg m-auto'>
+        <article className='bg-white w-[360px] h-auto space-y-4 flex justify-center flex-col rounded-md p-8 shadow-2xl m-auto'>
           <div className='space-y-4 flex justify-center flex-col'>
+            <img src='/Instagram.logo.png' alt='instagram logo' />
+            <h2 className='text-center text-lg mb-6'> </h2>
             <form className='flex flex-col'>
-              <label className='font-light mb-2 tracking-wider'>Username</label>
               <input
-                className='border  p-2 rounded-md font-normal shadow-sm hover:shadow-md outline-none focus:border-blue-400 tracking-wider mb-1'
+                className='border border-b-2 border-b-slate-400 p-2  font-normal shadow-sm bg-slate-50 hover:bg-gray-100 outline-none focus:border-blue-400 tracking-wider mb-3'
                 type='text'
                 placeholder='Username'
                 autocomplete='username'
               />
-              <label className='font-light mb-2 tracking-wider'>Password</label>
               <input
-                className='border  p-2 rounded-md font-normal shadow-sm hover:shadow-md outline-none focus:border-blue-400 tracking-wider mb-1'
+                className='border border-b-2 border-b-slate-400  p-2 font-normal shadow-sm bg-slate-50 hover:bg-gray-100 outline-none focus:border-blue-400 tracking-wider mb-3'
                 type='password'
                 placeholder='Password'
                 autocomplete='current-password'
               />
               <button
-                className='w-full mt-6 bg-blue-600/80 text-white font-medium tracking-wider p-2 px-3'
+                className='mt-4 w-full text-white font-semibold bg-blue-500 py-2 text-xl tracking-wider px-3 flex justify-around hover:opacity-90 transition duration-150 items-center rounded-md'
                 type='submit'
               >
                 Login
               </button>
             </form>
-            <div>
-              <div></div>
-              <div>
-                <h4>OR</h4>
-              </div>
-              <div></div>
+            <div className='flex justify-center items-center'>
+              <hr className='h-0.5 w-full' />
+              <h4 className='flex justify-center mx-2'>OR</h4>
+              <hr className='h-0.5 w-full' />
             </div>
             <LoginWithFacebook />
             <button type='submit'>
               <h4> Forgot password!</h4>
             </button>
           </div>
-          <div>
-            <p> Don't have an account</p>
+          <div className='flex m-auto'>
+            <p className='font-light'>Have an account?</p>
             <Link to='/accounts/emailsignup'>
-              <button>Sign up</button>
+              <button type='button' className='ml-2 underline text-blue-500'>
+                Sign Up
+              </button>
             </Link>
           </div>
         </article>
@@ -56,14 +56,17 @@ export default function LoginPage() {
   );
 }
 
-function LoginWithFacebook({ color, iconColor }) {
+export function LoginWithFacebook({ color, iconColor }) {
   const facebookIcon = (iconColor = 'blue' ? (
-    <AiFillFacebook />
+    <AiFillFacebook size={35} className='rounded-full' fill='white' />
   ) : (
     <AiOutlineFacebook />
   ));
   return (
-    <button>
+    <button
+      type='submit'
+      className='w-full text-white font-semibold bg-blue-500 py-1 px-3 flex justify-around hover:opacity-90 transition duration-150 items-center rounded-md'
+    >
       {facebookIcon}
       Log In with Facebook
     </button>
