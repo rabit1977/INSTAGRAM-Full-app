@@ -35,7 +35,7 @@ export function getDefaultPost() {
   return {
     id: uuid(),
     likes: 13,
-    caption: `Come into our world of programming language,Learn modern ReactJs`,
+    caption: `Come into our world of programming language,Learn modern ReactJs, javascript, nodejs, and more Full Stack baseed syntax. I hope that this project is going to be my first and big project which i will update and mantain all my life, I will use all possible css framework to style this project and mongodb, firebase  database.`,
     // chossen ranodm video links from netNinja youtube channel
     media:
       'https://www.youtube.com/watch?v=8DploTqLstE&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=2',
@@ -59,7 +59,7 @@ export function getDefaultPost() {
 //       created_at: "2020-02-29T03:08:14.522421+00:00",
 //     },
 //   ];
-  
+
 //   export const defaultCurrentUser = {
 //     id: uuid(),
 //     username: "me",
@@ -74,4 +74,3 @@ export function getDefaultPost() {
 //     followers: [defaultUser],
 //     following: [defaultUser],
 //   };
-  

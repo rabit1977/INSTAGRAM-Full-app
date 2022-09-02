@@ -11,7 +11,7 @@ export default function FeedPage() {
       <div className='flex max-w-5/6 justify-center gap-8'>
         {/* Feed Posts */}
         <div className='flex flex-col min-w-[700px] bg-red-300'>
-          {Array.from({ length: 6 }, () => getDefaultPost()).map((post) => (
+          {Array.from({ length: 1 }, () => getDefaultPost()).map((post) => (
             <FeedPost key={post.id} post={post} />
           ))}
         </div>
