@@ -5,6 +5,9 @@
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@apollo/react-hooks": "^4.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@rooks/use-outside-click": "^4.11.2",
     "@tanem/react-nprogress": "^5.0.12",
     "@testing-library/jest-dom": "^5.16.5",
