@@ -14,7 +14,7 @@ export default function Navbar() {
 
 function Logo() {
   return (
-    <div className='border-b shadow-md'>
+    <div className='border-b z-50 bg-gray-50 border-black/30 shadow-md fixed top-0 left-0 right-0 '>
       <Link to='/'>
         <div className=''>
           <AiOutlineInstagram size='50' />

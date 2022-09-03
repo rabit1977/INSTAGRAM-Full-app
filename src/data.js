@@ -2,8 +2,8 @@ import { v4 as uuid } from 'uuid';
 
 export const defaultUser = {
   id: uuid(),
-  username: 'username',
-  name: 'name',
+  username: 'Andi',
+  name: 'Andi',
   profile_image:
     'https://yt3.ggpht.com/n3jqAh46wfoODJ0DlAfOI2CKfXhxOH4o5zrlx1KaEJ7ULe9Eo8PKvK_HEJ7sJ3uOy3ibKwFY=s88-c-k-c0x00ffffff-no-rj-mo',
 };

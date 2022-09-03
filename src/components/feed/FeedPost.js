@@ -3,28 +3,36 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 import { BiCommentDetail } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import UserCard from '../shared/UserCard';
-import { AiOutlineShareAlt } from 'react-icons/ai';
+import {
+  AiOutlineDislike,
+  AiOutlineLike,
+  AiOutlineShareAlt,
+} from 'react-icons/ai';
 import HTMLEllipsis from 'react-lines-ellipsis/lib/html';
 
 export default function FeedPost({ post }) {
-  const { id, likes, user, caption, comments } = post;
+  const { id, likes, user, caption, comments, username } = post;
   const [showCaption, setCaption] = useState(false);
 
   return (
     <>
-      <article className='my-6'>
+      <article className='mb-8 flex flex-col max-w-[900px] min-w[700px] bg-gray-100 shadow-lg border-2 border-black/30'>
         {/* Header */}
         <div className='mx-4 flex justify-between items-center font-normal tracking-wide text-xl py-4'>
-          <UserCard />
+          <UserCard user={user} username={username} />
           <FiMoreHorizontal style={{ cursor: 'pointer' }} />
         </div>
         {/* image */}
         <div className='mb-4'>
-          <img src='instagram-logo-banner.png' alt='media post' />
+          <img
+            src='instagram-logo-banner.png'
+            alt='media post'
+            className='w-full h-full'
+          />
         </div>
         {/* post buttons */}
         <div className=''>
-          <div className='bg-white flex justify-between mx-4 items-center text-gray-700'>
+          <div className='flex justify-between mx-4 items-center text-gray-700'>
             <div className='flex flex-1 space-x-6 '>
               <span>
                 <LikeButton />
@@ -76,19 +84,22 @@ export default function FeedPost({ post }) {
                 </Link>
               </div>
             ))}
-            <h5> 5 DAYS AGO</h5>
+            <span className='text-xs'>5 DAYS AGO</span>
           </div>
-          <div className='mx-4'>
+          <div className=' p-4 mt-2 border-t border-black/30 '>
             <Comment />
           </div>
-        </div>
+        </div>{' '}
       </article>
     </>
   );
 }
 
 function LikeButton() {
-  return <>Like Button</>;
+  const [liked, setLiked] = useState('');
+  /* i have to create this functionality */
+
+  return <AiOutlineLike size={25} />;
 }
 function SaveButton() {
   return <>Save Button</>;

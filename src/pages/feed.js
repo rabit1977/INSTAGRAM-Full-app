@@ -8,15 +8,15 @@ import FeedSideSuggestions from '../components/feed/FeedSideSuggestions';
 export default function FeedPage() {
   return (
     <Layout>
-      <div className='flex max-w-5/6 justify-center gap-8'>
+      <div className='flex w-3/4 justify-center m-auto gap-8'>
         {/* Feed Posts */}
-        <div className='flex flex-col min-w-[700px] bg-red-300'>
-          {Array.from({ length: 1 }, () => getDefaultPost()).map((post) => (
+        <div className=''>
+          {Array.from({ length: 2 }, () => getDefaultPost()).map((post) => (
             <FeedPost key={post.id} post={post} />
           ))}
         </div>
         {/* Sidebar */}
-        <div className='hidden xl:block  flex-col sm:min-w-[350px] bg-green-300'>
+        <div className='hidden xl:block  flex-col sm:min-w-[350px] border-2 border-black/30 shadow-lg bg-gray-200'>
           <div>
             <UserCard />
             <FeedSideSuggestions />
