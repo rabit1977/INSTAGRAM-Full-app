@@ -14,10 +14,10 @@ export default function Navbar() {
 
 function Logo() {
   return (
-    <div className='border-b z-50 bg-gray-50 border-black/30 shadow-md fixed top-0 left-0 right-0 '>
+    <div className='flex border-b z-50 bg-gray-50 border-black/30 shadow-md fixed top-0 left-0 right-0 '>
       <Link to='/'>
-        <div className=''>
-          <AiOutlineInstagram size='50' />
+        <div className='ml-12 py-2'>
+          <AiOutlineInstagram size='60' />
         </div>
       </Link>
     </div>

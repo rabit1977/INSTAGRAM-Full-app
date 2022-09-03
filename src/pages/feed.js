@@ -16,8 +16,8 @@ export default function FeedPage() {
           ))}
         </div>
         {/* Sidebar */}
-        <div className='hidden xl:block  flex-col sm:min-w-[350px] border-2 border-black/30 shadow-lg bg-gray-200'>
-          <div>
+        <div className='hidden xl:block  flex-col sm:min-w-[350px] border-2 border-black/30 shadow-lg bg-gray-100'>
+          <div className='m-4'>
             <UserCard />
             <FeedSideSuggestions />
           </div>

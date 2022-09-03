@@ -4,8 +4,9 @@ import { BiCommentDetail } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import UserCard from '../shared/UserCard';
 import {
-  AiOutlineDislike,
+  AiFillSave,
   AiOutlineLike,
+  AiOutlineSave,
   AiOutlineShareAlt,
 } from 'react-icons/ai';
 import HTMLEllipsis from 'react-lines-ellipsis/lib/html';
@@ -102,8 +103,40 @@ function LikeButton() {
   return <AiOutlineLike size={25} />;
 }
 function SaveButton() {
-  return <>Save Button</>;
+  const [saved, setSaved] = useState(false);
+  const icon = saved ? <AiFillSave /> : <AiOutlineSave />;
+  const onClick = saved ? handleRemove : handleSave;
+
+  function handleSave() {
+    console.log('save');
+    setSaved(true);
+  }
+  function handleRemove() {
+    console.log('remove');
+    setSaved('false');
+  }
+
+  return <AiOutlineSave icon={icon} onClick={onClick} size={25} />;
 }
 function Comment() {
-  return <>Comment</>;
+  const [content, setContent] = useState('');
+  return (
+    <div className='flex justify-between  disabled:opacity-40'>
+      <input
+        type='text'
+        value={content}
+        placeholder='Add a comment ...'
+        className='flex-1 bg-transparent resize-none outline-none focus:bg-gray-50 rounded-md pl-4'
+        rows={1}
+        cols='40'
+        onChange={(event) => setContent(event.target.value)}
+      />
+      <button
+        className='px-4 py-1 rounded-full  disabled:opacity-40 font-semibold/90 tracking-wide text-md'
+        disabled={!content.trim()}
+      >
+        Post
+      </button>
+    </div>
+  );
 }
