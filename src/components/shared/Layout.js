@@ -2,11 +2,16 @@ import React from 'react';
 import SEO from './Seo';
 import Navbar from '../shared/Navbar';
 
-export default function Layout({ children, title, marginTop = 100 }) {
+export default function Layout({
+  children,
+  title,
+  minimalNavbar = false,
+  marginTop = 100,
+}) {
   return (
     <section className=''>
       <SEO title={title} />
-      <Navbar />
+      <Navbar minimalNavbar={minimalNavbar} />
       <main className='' style={{ marginTop }}>
         <section className=''>
           <div className=''>{children}</div>
