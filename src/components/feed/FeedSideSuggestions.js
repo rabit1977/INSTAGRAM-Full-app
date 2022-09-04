@@ -5,6 +5,7 @@ import UserCard from '../shared/UserCard';
 
 export default function FeedSideSuggestions() {
   let loading = false;
+
   return (
     <article className='flex flex-col'>
       <div className='mt-6'>

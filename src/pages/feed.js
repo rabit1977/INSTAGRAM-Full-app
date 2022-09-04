@@ -17,7 +17,7 @@ export default function FeedPage() {
       <div className='flex w-3/4 justify-center m-auto gap-8'>
         {/* Feed Posts */}
         <div className=''>
-          {Array.from({ length: 2 }, () => getDefaultPost()).map((post) => (
+          {Array.from({ length: 5 }, () => getDefaultPost()).map((post) => (
             <FeedPost key={post.id} post={post} />
           ))}
         </div>

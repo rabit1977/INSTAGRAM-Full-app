@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { FiMoreHorizontal } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import UserCard from '../shared/UserCard';
-import { AiFillSave, AiOutlineLike, AiOutlineSave } from 'react-icons/ai';
 import HTMLEllipsis from 'react-lines-ellipsis/lib/html';
 import {
   CommentButton,
-  LikeButton,
+  LikeIcon,
   SendButton,
-  SaveButton,
+  UnLikeIcon,
+  RemoveIcon,
+  SaveIcon,
 } from '../../utils/icons';
 
 export default function FeedPost({ post }) {
@@ -92,15 +93,25 @@ export default function FeedPost({ post }) {
   );
 }
 
-function LikedButton() {
-  const [liked, setLiked] = useState('');
-  /* i have to create this functionality */
+function LikeButton() {
+  const [liked, setLiked] = useState(false);
+  const Icon = liked ? UnLikeIcon : LikeIcon;
+  const onClick = liked ? handleUnLike : handleLike;
 
-  return <AiOutlineLike size={25} />;
+  function handleLike() {
+    console.log('save');
+    setLiked(true);
+  }
+  function handleUnLike() {
+    console.log('remove');
+    setLiked(false);
+  }
+  return <Icon onClick={onClick} />;
 }
-function SavedButton() {
+
+function SaveButton() {
   const [saved, setSaved] = useState(false);
-  const icon = saved ? <AiFillSave /> : <AiOutlineSave />;
+  const Icon = saved ? RemoveIcon : SaveIcon;
   const onClick = saved ? handleRemove : handleSave;
 
   function handleSave() {
@@ -109,11 +120,12 @@ function SavedButton() {
   }
   function handleRemove() {
     console.log('remove');
-    setSaved('false');
+    setSaved(false);
   }
 
-  return <AiOutlineSave icon={icon} onClick={onClick} size={25} />;
+  return <Icon onClick={onClick} />;
 }
+
 function Comment() {
   const [content, setContent] = useState('');
   return (
