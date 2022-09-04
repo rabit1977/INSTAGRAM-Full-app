@@ -1,5 +1,84 @@
 import React from 'react';
 
+export const Spinner = (props) => {
+  return (
+    <svg
+      className='m-auto animate-spin'
+      width='80'
+      height='80'
+      viewBox='0 0 220 192'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <rect width='220' height='192' fill='white' />
+      <rect
+        width='189'
+        height='171'
+        transform='translate(16 10)'
+        fill='white'
+      />
+      <circle cx='110.208' cy='41' r='12' fill='#2128D0' />
+      <circle cx='110.208' cy='150' r='12' fill='#D9D9D9' />
+      <circle
+        cx='79.9212'
+        cy='50.9469'
+        r='12'
+        transform='rotate(-35 79.9212 50.9469)'
+        fill='#D9D9D9'
+      />
+      <circle
+        cx='142.441'
+        cy='140.234'
+        r='12'
+        transform='rotate(-35 142.441 140.234)'
+        fill='#D9D9D9'
+      />
+      <circle
+        cx='59.5891'
+        cy='76.8279'
+        r='12'
+        transform='rotate(-70 59.5891 76.8279)'
+        fill='#D9D9D9'
+      />
+      <circle
+        cx='162.016'
+        cy='114.108'
+        r='12'
+        transform='rotate(-70 162.016 114.108)'
+        fill='#D9D9D9'
+      />
+      <circle
+        cx='59.3806'
+        cy='113.619'
+        r='12'
+        transform='rotate(-110 59.3806 113.619)'
+        fill='#D9D9D9'
+      />
+      <circle
+        cx='161.807'
+        cy='76.3392'
+        r='12'
+        transform='rotate(-110 161.807 76.3392)'
+        fill='#D9D9D9'
+      />
+      <circle
+        cx='80.2616'
+        cy='140.287'
+        r='12'
+        transform='rotate(-145 80.2616 140.287)'
+        fill='#D9D9D9'
+      />
+      <circle
+        cx='142.781'
+        cy='50.9997'
+        r='12'
+        transform='rotate(-145 142.781 50.9997)'
+        fill='#D9D9D9'
+      />
+    </svg>
+  );
+};
+
 export const SendButton = (props) => {
   return (
     <svg

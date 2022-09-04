@@ -1,11 +1,11 @@
 import React from 'react';
-import { FaInstagram } from 'react-icons/fa';
+import { Spinner } from '../../utils/icons';
 
 export default function LoadingScreen() {
   return (
     <section className='flex justify-center items-center'>
       <span>
-        <FaInstagram size='100' className='opacity-50' />
+        <Spinner />
       </span>
     </section>
   );
