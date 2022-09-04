@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { FiMoreHorizontal } from 'react-icons/fi';
-import { BiCommentDetail } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import UserCard from '../shared/UserCard';
-import {
-  AiFillSave,
-  AiOutlineLike,
-  AiOutlineSave,
-  AiOutlineShareAlt,
-} from 'react-icons/ai';
+import { AiFillSave, AiOutlineLike, AiOutlineSave } from 'react-icons/ai';
 import HTMLEllipsis from 'react-lines-ellipsis/lib/html';
+import {
+  CommentButton,
+  LikeButton,
+  SendButton,
+  SaveButton,
+} from '../../utils/icons';
 
 export default function FeedPost({ post }) {
   const { id, likes, user, caption, comments, username } = post;
@@ -35,17 +35,13 @@ export default function FeedPost({ post }) {
         <div className=''>
           <div className='flex justify-between mx-4 items-center text-gray-700'>
             <div className='flex flex-1 space-x-6 '>
-              <span>
-                <LikeButton />
-              </span>
+              <LikeButton />
               <Link to={`/p/${id}`}>
-                <BiCommentDetail size='25' />
+                <CommentButton />
               </Link>
-              <span>
-                <AiOutlineShareAlt size='25' />
-              </span>
+              <SendButton />
             </div>
-            <div className='flex'>
+            <div>
               <SaveButton />
             </div>
           </div>
@@ -96,13 +92,13 @@ export default function FeedPost({ post }) {
   );
 }
 
-function LikeButton() {
+function LikedButton() {
   const [liked, setLiked] = useState('');
   /* i have to create this functionality */
 
   return <AiOutlineLike size={25} />;
 }
-function SaveButton() {
+function SavedButton() {
   const [saved, setSaved] = useState(false);
   const icon = saved ? <AiFillSave /> : <AiOutlineSave />;
   const onClick = saved ? handleRemove : handleSave;
