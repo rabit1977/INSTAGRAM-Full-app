@@ -10,7 +10,7 @@ export default function UserCard({ user = defaultUser }) {
         <img
           src={profile_image}
           alt='user avatar'
-          className='rounded-full h-12 border-2 border-gray-500'
+          className='rounded-full h-12 w-12 border-2 border-gray-500'
         />
       </Link>
       <div className='ml-2'>
