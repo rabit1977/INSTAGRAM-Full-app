@@ -46,6 +46,7 @@ function Logo() {
 }
 
 function Search() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
@@ -63,22 +64,50 @@ function Search() {
 
   return (
     <div className=''>
-      <input
-        className='border-2 border-black/40 pl-2 rounded-sm shadow-md'
-        type='text'
-        onChange={(e) => setQuery(e.target.value)}
-        start={<span className='' />}
-        end={
-          loading ? (
-            <Spinner />
-          ) : (
-            <span onClick={handleClearInput} className='' />
+      <div
+        hasResults={
+          hasResults && (
+            <div className=' bg-red-500 absolute' container>
+              {results.map((result) => (
+                <div
+                  key={result.id}
+                  className='bg-green-500'
+                  onClick={() => {
+                    navigate(`/${result.username}`);
+                    handleClearInput();
+                  }}
+                >
+                  <div className=''>
+                    <div className=''>
+                      <img src={result.profile_image} alt='user avatar' />
+                    </div>
+                    <div className=''>
+                      <p>{result.username}</p>
+                      <p>{result.name}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           )
         }
-        placeholder='Search'
-        value={query}
-      />
-      <div className='whitetooltip'></div>
+      >
+        <input
+          className='border-2 border-black/40 pl-2 rounded-sm shadow-md'
+          type='text'
+          onChange={(e) => setQuery(e.target.value)}
+          start={<span className='' />}
+          end={
+            loading ? (
+              <Spinner />
+            ) : (
+              <span onClick={handleClearInput} className='' />
+            )
+          }
+          placeholder='Search'
+          value={query}
+        />
+      </div>
     </div>
   );
 }
@@ -105,8 +134,18 @@ function Links({ path }) {
         </div>
         <Link to={`/${defaultCurrentUser.username}`}>
           <div
-            className={path === `/${defaultCurrentUser.username}` ? '' : ''}
-          ></div>
+            className={
+              path === `/${defaultCurrentUser.username}`
+                ? 'ring-2 rounded-full border-red-blue '
+                : 'ring-2 rounded-full border-red-500'
+            }
+          >
+            <img
+              src='myPicture.jpg'
+              alt='user avatar'
+              className='w-8 h-8 rounded-full border-2 border-black -mt-1'
+            />
+          </div>
         </Link>
       </div>
     </div>

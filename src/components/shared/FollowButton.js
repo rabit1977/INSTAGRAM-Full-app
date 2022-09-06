@@ -7,8 +7,8 @@ export default function FollowButton({ side }) {
     <button
       className={` ${
         side
-          ? 'text-blue-500'
-          : 'border-2 border-black/80 rounded-md bg-gray-200'
+          ? 'text-blue-500 px-4 hover:font-semibold transition duration-200'
+          : ''
       }`}
       onClick={() => setisFollowing(true)}
     >
@@ -20,7 +20,7 @@ export default function FollowButton({ side }) {
     <button
       className={`${
         side
-          ? 'border-2 border-black/80 px-4 bg-gray-200 rounded-md'
+          ? 'border-2 border-black/80 py-1 px-3 font-semibold hover:bg-gray-200 hover:scale-[101%] bg-[#dfdfdf] rounded-md'
           : 'text-blue-500 '
       }`}
       onClick={() => setisFollowing(false)}

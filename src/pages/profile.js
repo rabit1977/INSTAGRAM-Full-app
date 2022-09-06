@@ -1,5 +1,6 @@
 import React from 'react';
+import Layout from '../components/shared/Layout';
 
 export default function ProfilePage() {
-  return <div>ProfilePage</div>;
+  return <Layout>ProfilePage</Layout>;
 }
