@@ -5,12 +5,12 @@ import { defaultUser } from '../../data';
 export default function UserCard({ user = defaultUser }) {
   const { username, name, profile_image } = user;
   return (
-    <div className='w-full flex items-center'>
+    <div className='flex items-center p-3'>
       <Link to={`/${username}`}>
         <img
           src={profile_image}
           alt='user avatar'
-          className='rounded-full h-12 w-12 border-2 border-gray-500'
+          className='rounded-full h-12 w-12 ring-1 ring-offset-1 ring-slate-600'
         />
       </Link>
       <div className='ml-2'>

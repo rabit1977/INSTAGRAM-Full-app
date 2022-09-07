@@ -15,16 +15,16 @@ export default function FeedPage() {
 
   return (
     <Layout>
-      <div className='flex w-3/4 justify-center m-auto gap-8'>
+      <div className='flex max-w-6xl  justify-center m-auto overflow-hidden gap-4'>
         {/* Feed Posts */}
-        <div className=''>
+        <div className=' xl:max-w-3xl md:max-w-2xl sm:max-w-lg mx-4'>
           {Array.from({ length: 5 }, () => getDefaultPost()).map((post) => (
             <FeedPost key={post.id} post={post} />
           ))}
         </div>
         {/* Sidebar */}
-        <div className='hidden xl:block  flex-col sm:min-w-[350px] border-2 border-black/30 shadow-lg bg-gray-100'>
-          <div className='m-4'>
+        <div className='hidden xl:block flex-col w-full'>
+          <div className=''>
             <UserCard />
             <FeedSideSuggestions />
           </div>

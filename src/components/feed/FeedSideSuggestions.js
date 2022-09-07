@@ -10,13 +10,13 @@ export default function FeedSideSuggestions() {
   return (
     <article className='flex flex-col'>
       <div className='mt-6'>
-        <h4 className='mb-4 text-lg tracking-wide'>Your Suggestions...</h4>
+        <h4 className='px-4 text-lg tracking-wide'>Your Suggestions...</h4>
         {loading ? (
           <Spinner />
         ) : (
           Array.from({ length: 5 }, () => getdefaultUser()).map((user) => (
             <div
-              className='flex justify-between items-center border-b  py-2 border-black/30'
+              className='flex justify-between items-center pr-4'
               key={user.id}
             >
               <div>

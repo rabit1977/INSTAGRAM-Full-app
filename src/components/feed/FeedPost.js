@@ -18,11 +18,11 @@ export default function FeedPost({ post }) {
 
   return (
     <>
-      <article className='mb-8 flex flex-col max-w-[900px] min-w[700px] bg-gray-100 shadow-lg border-2 border-black/30'>
+      <article className='mb-4  flex flex-col bg-white rounded-xl  border border-[rgb(219,219,219)]'>
         {/* Header */}
-        <div className='mx-4 flex justify-between items-center font-normal tracking-wide text-xl py-4'>
+        <div className=' pr-4 flex justify-between items-center font-normal border-b  tracking-wide text-xl'>
           <UserCard user={user} username={username} />
-          <FiMoreHorizontal style={{ cursor: 'pointer' }} />
+          <FiMoreHorizontal className='cursor-pointer text-3xl' />
         </div>
         {/* image */}
         <div className='mb-4'>
@@ -33,8 +33,8 @@ export default function FeedPost({ post }) {
           />
         </div>
         {/* post buttons */}
-        <div className=''>
-          <div className='flex justify-between mx-4 items-center text-gray-700'>
+        <div className='mx-4'>
+          <div className='flex justify-between items-center text-gray-700'>
             <div className='flex flex-1 space-x-6 '>
               <LikeButton />
               <Link to={`/p/${id}`}>
@@ -46,10 +46,10 @@ export default function FeedPost({ post }) {
               <SaveButton />
             </div>
           </div>
-          <h4 className='mx-4 text-gray-600'>
+          <h4 className=' text-gray-600'>
             <span>{likes === 1 ? ' 1 like' : `${likes} likes`} </span>
           </h4>
-          <div className='mx-4'>
+          <div className=''>
             <Link to={`/${user?.username}`}>
               <h4> {user?.username} </h4>
             </Link>
@@ -75,7 +75,7 @@ export default function FeedPost({ post }) {
               <h4>View all {comments.length} comments</h4>
             </Link>
             {comments.map((comment) => (
-              <div className='mx-4' key={comment.id}>
+              <div className='' key={comment.id}>
                 <Link to={`/${comment.user.username}`}>
                   <span>{comment.user.username}</span>
                   <span>{comment.content}</span>
@@ -84,10 +84,10 @@ export default function FeedPost({ post }) {
             ))}
             <span className='text-xs'>5 DAYS AGO</span>
           </div>
-          <div className=' p-4 mt-2 border-t border-black/30 '>
-            <Comment />
-          </div>
         </div>{' '}
+        <div className=' px-4 pb-4 mt-2 border-t border-[rgb(219,219,219)] '>
+          <Comment />
+        </div>
       </article>
     </>
   );
@@ -129,18 +129,18 @@ function SaveButton() {
 function Comment() {
   const [content, setContent] = useState('');
   return (
-    <div className='flex justify-between  disabled:opacity-40'>
+    <div className='flex justify-between items-center  disabled:opacity-40 pt-3'>
       <input
         type='text'
         value={content}
         placeholder='Add a comment ...'
-        className='flex-1 bg-transparent resize-none outline-none focus:bg-gray-50 rounded-md pl-4'
+        className='flex-1 bg-transparent  outline-none focus:bg-gray-50 rounded-md '
         rows={1}
         cols='40'
         onChange={(event) => setContent(event.target.value)}
       />
       <button
-        className='px-4 py-1 rounded-full  disabled:opacity-40 font-semibold/90 tracking-wide text-md'
+        className=' rounded-full disabled:opacity-40 font-semibold disabled:text-blue-900 disabled:font-bold text-slate-700 bg-slate-50 tracking-wide text-lg'
         disabled={!content.trim()}
       >
         Post
