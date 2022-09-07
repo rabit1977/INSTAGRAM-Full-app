@@ -19,16 +19,18 @@ export default function Navbar({ minimalNavbar }) {
   const path = location.pathname;
 
   return (
-    <div className='flex items-center justify-around py-2 border-b bg-white border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
-      <Logo />
-      {/* {!minimalNavbar && <Search />}
+    <div className='py-2 border-b bg-white border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
+      <div className='flex items-center justify-between max-w-7xl m-auto '>
+        <Logo />
+        {/* {!minimalNavbar && <Search />}
         {!minimalNavbar && <Links />} */}
-      {!minimalNavbar && (
-        <>
-          <Search />
-          <Links path={path} />
-        </>
-      )}
+        {!minimalNavbar && (
+          <>
+            <Search />
+            <Links path={path} />
+          </>
+        )}
+      </div>
     </div>
   );
 }
@@ -63,11 +65,11 @@ function Search() {
   }
 
   return (
-    <div className=''>
+    <div className='hidden md:block'>
       <div
         hasResults={
           hasResults && (
-            <div className=' bg-red-500 absolute' container>
+            <div className='' container>
               {results.map((result) => (
                 <div
                   key={result.id}
@@ -93,7 +95,7 @@ function Search() {
         }
       >
         <input
-          className='border-0  bg-[rgba(239,239,239)] py-2 px-4 font-light rounded-lg w-[380px] placeholder:font-normal tracking-wider text-xl outline-none'
+          className='border-0 -ml-4 bg-[rgba(239,239,239)] py-2 px-3 font-light rounded-lg xl:w-[380px] lg:w-[290px] md:w-[230px] placeholder:font-normal tracking-wider text-xl outline-none'
           type='text'
           onChange={(e) => setQuery(e.target.value)}
           start={<span className='' />}
@@ -121,7 +123,7 @@ function Links({ path }) {
 
   return (
     <div>
-      <div className='flex space-x-10'>
+      <div className='flex space-x-2 md:space-x-4 xl:space-x-10'>
         <div>
           <AddIcon />
         </div>

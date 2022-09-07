@@ -9,7 +9,7 @@ export default function Layout({
   marginTop = 100,
 }) {
   return (
-    <section className=''>
+    <section className='w-screen'>
       <SEO title={title} />
       <Navbar minimalNavbar={minimalNavbar} />
       <main className='' style={{ marginTop }}>

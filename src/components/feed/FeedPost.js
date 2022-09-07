@@ -18,7 +18,7 @@ export default function FeedPost({ post }) {
 
   return (
     <>
-      <article className='mb-4  flex flex-col rounded-xl  border border-[rgb(219,219,219)]'>
+      <article className='mb-4 flex flex-col rounded-xl  border border-[rgb(219,219,219)]'>
         {/* Header */}
         <div className=' pr-4 flex justify-between items-center font-normal border-b  tracking-wide text-xl'>
           <UserCard user={user} username={username} />

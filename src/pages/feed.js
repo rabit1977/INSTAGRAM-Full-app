@@ -15,7 +15,7 @@ export default function FeedPage() {
 
   return (
     <Layout>
-      <div className='flex max-w-6xl  justify-center m-auto overflow-hidden gap-4'>
+      <div className='flex max-w-5xl justify-center m-auto overflow-hidden gap-4'>
         {/* Feed Posts */}
         <div className=' xl:max-w-3xl md:max-w-2xl sm:max-w-lg mx-4'>
           {Array.from({ length: 5 }, () => getDefaultPost()).map((post) => (
