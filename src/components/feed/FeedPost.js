@@ -18,7 +18,7 @@ export default function FeedPost({ post }) {
 
   return (
     <>
-      <article className='mb-4  flex flex-col bg-white rounded-xl  border border-[rgb(219,219,219)]'>
+      <article className='mb-4  flex flex-col rounded-xl  border border-[rgb(219,219,219)]'>
         {/* Header */}
         <div className=' pr-4 flex justify-between items-center font-normal border-b  tracking-wide text-xl'>
           <UserCard user={user} username={username} />
@@ -134,13 +134,13 @@ function Comment() {
         type='text'
         value={content}
         placeholder='Add a comment ...'
-        className='flex-1 bg-transparent  outline-none focus:bg-gray-50 rounded-md '
+        className='flex-1 bg-transparent outline-none rounded-md placeholder:text-slate-500 '
         rows={1}
         cols='40'
         onChange={(event) => setContent(event.target.value)}
       />
       <button
-        className=' rounded-full disabled:opacity-40 font-semibold disabled:text-blue-900 disabled:font-bold text-slate-700 bg-slate-50 tracking-wide text-lg'
+        className=' rounded-full disabled:opacity-40 font-semibold disabled:text-[#0095f6] disabled:font-bold text-slate-700 bg-slate-50 tracking-wide text-lg'
         disabled={!content.trim()}
       >
         Post

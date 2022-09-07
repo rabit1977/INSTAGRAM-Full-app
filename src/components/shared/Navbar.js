@@ -19,7 +19,7 @@ export default function Navbar({ minimalNavbar }) {
   const path = location.pathname;
 
   return (
-    <div className='flex items-center justify-around py-2 border-b border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
+    <div className='flex items-center justify-around py-2 border-b bg-white border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
       <Logo />
       {/* {!minimalNavbar && <Search />}
         {!minimalNavbar && <Links />} */}
@@ -93,7 +93,7 @@ function Search() {
         }
       >
         <input
-          className='border-0  bg-[rgba(239,239,239)] py-2 px-4 shadow-md font-light rounded-lg w-[380px] placeholder:font-normal tracking-wider text-xl h-11 outline-none'
+          className='border-0  bg-[rgba(239,239,239)] py-2 px-4 font-light rounded-lg w-[380px] placeholder:font-normal tracking-wider text-xl outline-none'
           type='text'
           onChange={(e) => setQuery(e.target.value)}
           start={<span className='' />}
