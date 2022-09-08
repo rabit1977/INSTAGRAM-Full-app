@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 
 export default function FollowButton({ side }) {
-  const [isFollowing, setisFollowing] = useState(false);
+  const [isFollowing, setIsFollowing] = useState(false);
 
   const followButton = (
     <button
       className={` ${
-        side
-          ? 'text-[#0095fb] px-4 font-bold '
-          : 'text-[#0095fb]'
+        side ? 'text-[#0095fb] px-4 font-bold ' : 'text-[#0095fb]'
       }`}
-      onClick={() => setisFollowing(true)}
+      onClick={() => setIsFollowing(true)}
     >
       Follow
     </button>
@@ -23,7 +21,7 @@ export default function FollowButton({ side }) {
           ? ' border border-[rgb(219,219,219)] py-1 px-3 font-bold bg-slate-50 text-slate-800 rounded-md'
           : ''
       }`}
-      onClick={() => setisFollowing(false)}
+      onClick={() => setIsFollowing(false)}
     >
       Following
     </button>

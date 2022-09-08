@@ -140,7 +140,7 @@ function Comment() {
         onChange={(event) => setContent(event.target.value)}
       />
       <button
-        className=' rounded-full disabled:opacity-40 font-semibold disabled:text-[#0095f6] disabled:font-bold text-slate-700 bg-slate-50 tracking-wide text-lg'
+        className=' rounded-full disabled:opacity-40 font-semibold disabled:text-[#0095f6] disabled:font-bold text-[#0095fb] bg-slate-50 tracking-wide text-lg'
         disabled={!content.trim()}
       >
         Post

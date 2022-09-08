@@ -13,11 +13,13 @@ export default function UserCard({ user = defaultUser }) {
           className='rounded-full h-12 w-12 ring-1 ring-offset-1 ring-slate-600'
         />
       </Link>
-      <div className='ml-2'>
+      <div className='ml-3'>
         <Link to={`/${username}`}>
-          <h5 className='text-sm'>{username}</h5>
+          <h5 className='text-md capitalize font-bold text-slate-600'>
+            {username}
+          </h5>
         </Link>
-        <p className='text-sm lowercase'>{name}</p>
+        <p className='text-md capitalize font-normal text-slate-600'>{name}</p>
       </div>
     </div>
   );

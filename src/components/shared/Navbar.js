@@ -20,7 +20,7 @@ export default function Navbar({ minimalNavbar }) {
 
   return (
     <div className='py-2 border-b bg-white border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
-      <div className='flex items-center justify-between max-w-7xl m-auto '>
+      <div className='flex items-center justify-between sm:justify-around max-w-7xl m-auto '>
         <Logo />
         {/* {!minimalNavbar && <Search />}
         {!minimalNavbar && <Links />} */}
@@ -39,7 +39,7 @@ function Logo() {
   return (
     <div>
       <Link to='/'>
-        <div className='ml-8'>
+        <div className=''>
           <InstagramLogo />
         </div>
       </Link>
@@ -123,7 +123,7 @@ function Links({ path }) {
 
   return (
     <div>
-      <div className='flex space-x-2 md:space-x-4 xl:space-x-10'>
+      <div className='flex space-x-4 md:space-x-6 xl:space-x-10'>
         <div>
           <AddIcon />
         </div>
