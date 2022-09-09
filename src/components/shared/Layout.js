@@ -6,7 +6,7 @@ export default function Layout({
   children,
   title,
   minimalNavbar = false,
-  marginTop = 100,
+  marginTop = 80,
 }) {
   return (
     <section className='w-screen'>

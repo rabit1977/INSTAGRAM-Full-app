@@ -8,7 +8,7 @@ export const defaultUser = {
     'https://yt3.ggpht.com/n3jqAh46wfoODJ0DlAfOI2CKfXhxOH4o5zrlx1KaEJ7ULe9Eo8PKvK_HEJ7sJ3uOy3ibKwFY=s88-c-k-c0x00ffffff-no-rj-mo',
 };
 
-export function getdefaultUser() {
+export function getDefaultUser() {
   return {
     id: uuid(),
     username: 'username',
@@ -44,21 +44,21 @@ export function getDefaultPost() {
   };
 }
 
-// export const defaultNotifications = [
-//     {
-//       id: uuid(),
-//       type: "follow",
-//       user: defaultUser,
-//       created_at: "2020-02-29T03:08:14.522421+00:00",
-//     },
-//     {
-//       id: uuid(),
-//       type: "like",
-//       user: defaultUser,
-//       post: defaultPost,
-//       created_at: "2020-02-29T03:08:14.522421+00:00",
-//     },
-//   ];
+export const defaultNotifications = [
+    {
+      id: uuid(),
+      type: "follow",
+      user: defaultUser,
+      created_at: "2020-02-29T03:08:14.522421+00:00",
+    },
+    {
+      id: uuid(),
+      type: "like",
+      user: defaultUser,
+      post: defaultPost,
+      created_at: "2020-02-29T03:08:14.522421+00:00",
+    },
+  ];
 
 export const defaultCurrentUser = {
   id: uuid(),

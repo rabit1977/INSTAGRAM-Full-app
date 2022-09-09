@@ -4,7 +4,7 @@ import Layout from '../components/shared/Layout';
 
 export default function NotFoundPage() {
   return (
-    <Layout minimalNavbar title='Page Not Found' marginTop={120}>
+    <Layout minimalNavbar title='Page Not Found' marginTop={100}>
       <div className='flex flex-col items-center space-y-2'>
         <h1 className='text-2xl font-semibold'>
           Sorry this page isn't available.
