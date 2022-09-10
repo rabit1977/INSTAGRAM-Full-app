@@ -1,39 +1,29 @@
 import React, { useState } from 'react';
 import { FiMoreHorizontal } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-import UserCard from '../shared/UserCard';
 import HTMLEllipsis from 'react-lines-ellipsis/lib/html';
+import { Link } from 'react-router-dom';
 import {
   CommentButton,
   LikeIcon,
-  SendButton,
-  UnLikeIcon,
   RemoveIcon,
   SaveIcon,
+  SendButton,
+  UnLikeIcon,
 } from '../../utils/icons';
-import { getDefaultUser } from '../../data';
+import UserCard from '../shared/UserCard';
+import FollowSuggestions from '../shared/FollowSuggestions';
 
-export default function FeedPost({ post }) {
+export default function FeedPost({ post, index }) {
   const { id, likes, user, caption, comments, username } = post;
   const [showCaption, setCaption] = useState(false);
+  const showFollowSuggestions = index === 1;
 
   return (
     <>
-      <div className='flex mb-4 border p-3 bg-white space-x-4 rounded-xl border-[rgb(219,219,219)]'>
-        {Array.from({ length: 3 }, () => getDefaultUser()).map((user) => (
-          <div className='flex flex-col items-center capitalize' key={user.id}>
-            <Link to={`/${username}`}>
-              <img
-                src='myPicture.jpg'
-                alt='user avatar'
-                className='rounded-full h-14 w-14 ring-1 ring-offset-1 ring-slate-600'
-              />
-            </Link>
-            <p>{user.username}</p>
-          </div>
-        ))}
-      </div>
-      <article className='mb-4 flex flex-col rounded-xl bg-white  border border-[rgb(219,219,219)]'>
+      <article
+        className='mb-4 flex flex-col rounded-xl bg-white  border border-[rgb(219,219,219)]'
+        style={{ marginBottom: showFollowSuggestions && 30 }}
+      >
         {/* Header */}
         <div className=' pr-4 flex justify-between items-center font-normal border-b  tracking-wide text-xl'>
           <UserCard user={user} username={username} />
@@ -104,6 +94,7 @@ export default function FeedPost({ post }) {
           <Comment />
         </div>
       </article>
+      {showFollowSuggestions && <FollowSuggestions />}
     </>
   );
 }

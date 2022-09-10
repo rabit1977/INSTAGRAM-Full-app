@@ -6,7 +6,9 @@ export default function FollowButton({ side }) {
   const followButton = (
     <button
       className={` ${
-        side ? 'text-[#0095fb] font-bold text-sm ' : 'text-[#0095fb]'
+        side
+          ? 'bg-[#0095fb] text-white px-5 rounded-sm font-normal py-1 text-sm'
+          : 'text-[#0095fb] font-bold text-sm'
       }`}
       onClick={() => setIsFollowing(true)}
     >

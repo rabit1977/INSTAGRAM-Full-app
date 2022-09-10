@@ -7,6 +7,7 @@ import useOutsideClick from '@rooks/use-outside-click';
 export default function NotificationList({ handleHideList }) {
   const listRef = useRef();
   useOutsideClick(listRef, handleHideList);
+  
   return (
     <div ref={listRef}>
       {defaultNotifications.map((notification) => {

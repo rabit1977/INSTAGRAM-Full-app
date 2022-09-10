@@ -16,25 +16,34 @@ import {
 import { defaultCurrentUser, getDefaultUser } from '../../data';
 import NotificationTooltip from '../notification/NotificationTooltip';
 import NotificationList from '../notification/NotificationList';
+import { useNProgress } from '@tanem/react-nprogress';
 
 export default function Navbar({ minimalNavbar }) {
+  const [isLoadingPage, setIsLoadingPage] = useState(true);
   const location = useLocation();
   const path = location.pathname;
 
+  useEffect(() => {
+    setTimeout(() => setIsLoadingPage(false), 2000);
+  }, [path]);
+
   return (
-    <div className='border-b p-1.5 bg-white border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
-      <div className='flex items-center sm:justify-between justify-around m-auto max-w-5xl '>
-        <Logo />
-        {/* {!minimalNavbar && <Search />}
+    <>
+      <Progress isAnimating={isLoadingPage} />
+      <div className='border-b p-1.5 bg-white border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
+        <div className='flex items-center sm:justify-between justify-around m-auto max-w-5xl '>
+          <Logo />
+          {/* {!minimalNavbar && <Search />}
         {!minimalNavbar && <Links />} */}
-        {!minimalNavbar && (
-          <>
-            <Search location={location} />
-            <Links path={path} />
-          </>
-        )}
+          {!minimalNavbar && (
+            <>
+              <Search location={location} />
+              <Links path={path} />
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -146,7 +155,7 @@ function Links({ path }) {
       {showList && <NotificationList handleHideList={handleHideList} />}
       <div className='flex space-x-1 md:space-x-2 xl:space-x-6 pr-4'>
         <Link to='/'>{path === '/' ? <HomeActiveIcon /> : <HomeIcon />}</Link>
-        <MyMessages />
+        <MyMessages className='shrink-0' />
         <div>
           <AddIcon />
         </div>
@@ -155,28 +164,78 @@ function Links({ path }) {
         </Link>
         <div
           onClick={handleToggleList}
-          showTooltip={showTooltip}
           handleHideTooltip={handleHideTooltip}
+          showTooltip={showTooltip}
           title={<NotificationTooltip />}
         >
           {showList ? <LikeActiveIcon /> : <NavLikeIcon />}
         </div>
-        <Link to={`/${defaultCurrentUser.username}`}>
+
+        <Link to={`/${defaultCurrentUser.username}`} className='shrink-0'>
           <div
             className={
               path === `/${defaultCurrentUser.username}`
-                ? 'ring-1 rounded-full border-red-blue '
+                ? 'ring-1 rounded-full border-red-blue shrink-0 '
                 : 'ring-1 rounded-full border-red-500'
             }
           >
             <img
               src='myPicture.jpg'
               alt='user avatar'
-              className='w-8 h-8 rounded-full border border-black -mt-1'
+              className='w-8 h-8 -mt-1 rounded-full border border-black'
             />
           </div>
         </Link>
       </div>
+    </div>
+  );
+}
+
+function Progress({ isAnimating }) {
+  const { animationDuration, isFinished, progress } = useNProgress({
+    isAnimating,
+  });
+
+  return (
+    <div
+      style={{
+        opacity: isFinished ? 0 : 1,
+        pointerEvents: 'none',
+        transition: `opacity ${animationDuration}ms linear`,
+      }}
+    >
+      <Bar animationDuration={animationDuration} progress={progress} />;
+    </div>
+  );
+}
+
+function Bar({ animationDuration, progress }) {
+  return (
+    <div
+      style={{
+        background: '#29d',
+        height: 2,
+        left: 0,
+        marginLeft: `${(-1 + progress) * 100}%`,
+        position: 'fixed',
+        top: 0,
+        transition: `margin-left ${animationDuration}ms linear`,
+        width: '100%',
+        zIndex: 1031,
+      }}
+    >
+      <div
+        style={{
+          boxShadow: '0 0 10px #29d, 0 0 5px #29d',
+          display: 'block',
+          height: '100%',
+          opacity: 1,
+          position: 'absolute',
+          right: 0,
+          transform: 'rotate(3deg) translate(0px, -4px)',
+          width: 100,
+        }}
+      />
     </div>
   );
 }
