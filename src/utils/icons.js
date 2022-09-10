@@ -605,7 +605,7 @@ export const PrevArrowIcon = (props) => {
       <path
         d='M51.2292 15.1901L27.7484 36.3986C26.4296 37.5898 26.4296 39.66 27.7484 40.8512L51.2292 62.0597'
         stroke='white'
-        stroke-width='9'
+        strokeWidth='9'
       />
     </svg>
   );
@@ -627,7 +627,7 @@ export const NextArrowIcon = (props) => {
       <path
         d='M26.0543 15.1304L49.5352 36.3389C50.854 37.5301 50.854 39.6003 49.5352 40.7915L26.0543 62'
         stroke='white'
-        stroke-width='9'
+        strokeWidth='9'
       />
     </svg>
   );

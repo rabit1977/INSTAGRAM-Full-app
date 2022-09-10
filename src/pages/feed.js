@@ -16,7 +16,7 @@ export default function FeedPage() {
 
   return (
     <Layout>
-      <div className='flex max-w-3xl justify-center m-auto  gap-4'>
+      <div className=' flex max-w-3xl justify-center m-auto  gap-4'>
         {/* Feed Posts */}
         <div className='md:max-w-md sm:max-w-md w-3/4 '>
           <div className='flex mb-4 border p-3 bg-white space-x-4 rounded-xl border-[rgb(219,219,219)]'>

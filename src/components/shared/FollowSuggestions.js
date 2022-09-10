@@ -17,17 +17,16 @@ export default function FollowSuggestions() {
         <Spinner />
       ) : (
         <Slider
-          className='z-50'
-          dots={true}
+          dots={false}
           infinite={true}
           lazyLoad='ondemand'
           sledesToShow={3}
           speed={500}
-          touchThreshold={1000}
+          touchThreshold={500}
           variableWidth
           centerMode
           swipeToSlide
-          slidesToScroll={3}
+          slidesToScroll={1}
           easing='ease-in-out'
           nextArrow={<NextArrow />}
           prevArrow={<PrevArrow />}
@@ -75,7 +74,7 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { onClick } = props;
   return (
-    <div onClick={onClick} className='absolute left-0 bottom-16 -mx-4 z-50'>
+    <div onClick={onClick} className='absolute left-0 bottom-16 -mx-4'>
       <PrevArrowIcon />
     </div>
   );

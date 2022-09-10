@@ -12,10 +12,12 @@ import {
 } from '../../utils/icons';
 import UserCard from '../shared/UserCard';
 import FollowSuggestions from '../shared/FollowSuggestions';
+import OptionsDialog from '../shared/OptionsDialog';
 
 export default function FeedPost({ post, index }) {
   const { id, likes, user, caption, comments, username } = post;
   const [showCaption, setCaption] = useState(false);
+  const [showOptionsDialog, setShowOptionsDialog] = useState(false);
   const showFollowSuggestions = index === 1;
 
   return (
@@ -27,7 +29,10 @@ export default function FeedPost({ post, index }) {
         {/* Header */}
         <div className=' pr-4 flex justify-between items-center font-normal border-b  tracking-wide text-xl'>
           <UserCard user={user} username={username} />
-          <FiMoreHorizontal className='cursor-pointer text-xl' />
+          <FiMoreHorizontal
+            className='cursor-pointer text-xl'
+            onClick={() => setShowOptionsDialog(true)}
+          />
         </div>
         {/* image */}
         <div className='mb-4'>
@@ -95,6 +100,9 @@ export default function FeedPost({ post, index }) {
         </div>
       </article>
       {showFollowSuggestions && <FollowSuggestions />}
+      {showOptionsDialog && (
+        <OptionsDialog onClose={() => setShowOptionsDialog(false)} />
+      )}
     </>
   );
 }
