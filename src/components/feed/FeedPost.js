@@ -20,6 +20,14 @@ export default function FeedPost({ post, index }) {
   const [showOptionsDialog, setShowOptionsDialog] = useState(false);
   const showFollowSuggestions = index === 1;
 
+  function openModal() {
+    setShowOptionsDialog(true);
+  }
+  // }
+  function closeModal() {
+    setShowOptionsDialog(false);
+  }
+
   return (
     <>
       <article
@@ -31,7 +39,7 @@ export default function FeedPost({ post, index }) {
           <UserCard user={user} username={username} />
           <FiMoreHorizontal
             className='cursor-pointer text-xl'
-            onClick={() => setShowOptionsDialog(true)}
+            onClick={openModal}
           />
         </div>
         {/* image */}
@@ -101,7 +109,11 @@ export default function FeedPost({ post, index }) {
       </article>
       {showFollowSuggestions && <FollowSuggestions />}
       {showOptionsDialog && (
-        <OptionsDialog onClose={() => setShowOptionsDialog(false)} />
+        <OptionsDialog
+          onClose={closeModal}
+          openModal={openModal}
+          closeModal={closeModal}
+        />
       )}
     </>
   );
