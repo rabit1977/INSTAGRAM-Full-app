@@ -25,8 +25,7 @@ export function defaultPost() {
     caption: `lorem`,
     user: 'defaultUser',
     // chossen ranodm video links from netNinja youtube channel
-    media:
-      'https://www.youtube.com/watch?v=98BzS5Oz5E4&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=1',
+    media: 'myPicture.jpg',
     comments: [],
     created_at: '2022-08-26T03:10:25.448328+00:00',
   };
@@ -45,20 +44,20 @@ export function getDefaultPost() {
 }
 
 export const defaultNotifications = [
-    {
-      id: uuid(),
-      type: "follow",
-      user: defaultUser,
-      created_at: "2020-02-29T03:08:14.522421+00:00",
-    },
-    {
-      id: uuid(),
-      type: "like",
-      user: defaultUser,
-      post: defaultPost,
-      created_at: "2020-02-29T03:08:14.522421+00:00",
-    },
-  ];
+  {
+    id: uuid(),
+    type: 'follow',
+    user: defaultUser,
+    created_at: '2020-02-29T03:08:14.522421+00:00',
+  },
+  {
+    id: uuid(),
+    type: 'like',
+    user: defaultUser,
+    post: defaultPost,
+    created_at: '2020-02-29T03:08:14.522421+00:00',
+  },
+];
 
 export const defaultCurrentUser = {
   id: uuid(),

@@ -7,12 +7,14 @@ import { Link } from 'react-router-dom';
 import { getDefaultUser } from '../../data';
 import FollowButton from './FollowButton';
 
-export default function FollowSuggestions() {
+export default function FollowSuggestions({ hideHeader }) {
   let loading = false;
 
   return (
     <div className='mb-8'>
-      <h3 className='text-slate-600 mb-2'>Suggestions For You</h3>
+      {!hideHeader && (
+        <h3 className='text-slate-600 mb-2'>Suggestions For You</h3>
+      )}
       {loading ? (
         <Spinner />
       ) : (
@@ -65,7 +67,7 @@ function FollowSuggestionsItem({ user }) {
 function NextArrow(props) {
   const { onClick } = props;
   return (
-    <div onClick={onClick} className='absolute right-0 bottom-16 -mx-4'>
+    <div onClick={onClick} className='absolute right-0 bottom-16 -mx-6'>
       <NextArrowIcon />
     </div>
   );
@@ -74,7 +76,7 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { onClick } = props;
   return (
-    <div onClick={onClick} className='absolute left-0 bottom-16 -mx-4'>
+    <div onClick={onClick} className='absolute left-0 bottom-16 -mx-6'>
       <PrevArrowIcon />
     </div>
   );
