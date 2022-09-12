@@ -30,7 +30,7 @@ export default function Navbar({ minimalNavbar }) {
   return (
     <>
       <Progress isAnimating={isLoadingPage} />
-      <div className='border-b p-1.5 bg-white border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
+      <div className='z-50 border-b p-1.5 bg-white border-[rgb(219,219,219)] fixed top-0 left-0 right-0'>
         <div className='flex items-center sm:justify-between justify-around m-auto max-w-5xl '>
           <Logo />
           {/* {!minimalNavbar && <Search />}
@@ -80,25 +80,25 @@ function Search() {
     <div className='hidden sm:block'>
       <div>
         {hasResults && (
-          <div className='absolute bg-white border border-[rgb(219,219,219)] rounded-xl bg flex flex-col'>
+          <div className='absolute bg-white border border-[rgb(219,219,219)] rounded-xl mt-12 -ml-12 w-52 lg:w-72 flex flex-col'>
             {results.map((result) => (
               <div
                 key={result.id}
-                className='m-auto'
+                className=''
                 onClick={() => {
                   navigate(`/${result.username}`);
                   handleClearInput();
                 }}
               >
-                <div className='flex hover:bg-slate-100 py-2 border-[rgb(219,219,219)] lg:w-[260px] sm:w-[200px]'>
-                  <div className='flex flex-col justify-between items-center capitalize mr-4'>
+                <div className='flex items-center hover:bg-slate-100 py-2 border-[rgb(219,219,219)]  '>
+                  <div className='flex flex-col justify-between capitalize mx-3'>
                     <img
                       src={result.profile_image}
                       alt='user avatar'
-                      className='rounded-full md:h-8 md:w-8 h-12 w-12 ring-1 ring-offset-1 ring-slate-600'
+                      className='rounded-full md:h-8 md:w-8 h-8 w-8 ring-1 ring-offset-1 ring-slate-600'
                     />
                   </div>
-                  <div className='text-sm capitalize'>
+                  <div className='text-xs capitalize'>
                     <p>{result.username}</p>
                     <p>{result.name}</p>
                   </div>
@@ -109,7 +109,7 @@ function Search() {
         )}
 
         <input
-          className='border-0 bg-[rgba(239,239,239)] py-1.5 pl-2 -ml-12 mr-1 font-light rounded-xl lg:w-[280px] sm:w-[200px]  placeholder:font-light tracking-wide text-md outline-none'
+          className='border-0 bg-[rgba(239,239,239)] py-1.5 pl-2 -ml-12 mr-1 font-light rounded-xl w-52 lg:w-72 placeholder:font-light tracking-wide text-md outline-none'
           type='text'
           onChange={(event) => setQuery(event.target.value)}
           // start={<span className='' />}

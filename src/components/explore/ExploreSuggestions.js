@@ -3,10 +3,10 @@ import FollowSuggestions from '../shared/FollowSuggestions';
 
 export default function ExploreSuggestions() {
   return (
-    <div className='hidden sm:block max-w-2xl'>
+    <div className='hidden sm:block'>
       <div>
         <h2>Discover People</h2>
-        <FollowSuggestions hideHeader/>
+        <FollowSuggestions hideHeader />
       </div>
     </div>
   );

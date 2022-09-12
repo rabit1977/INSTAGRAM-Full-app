@@ -9,9 +9,9 @@ export default function Layout({
   marginTop = 60,
 }) {
   return (
-    <section className='w-screen'>
+    <section className=''>
       <SEO title={title} />
-      <Navbar minimalNavbar={minimalNavbar} className='z-50' />
+      <Navbar minimalNavbar={minimalNavbar} />
       <main className='max-w-2xl m-auto' style={{ marginTop }}>
         <section className=''>
           <div className=''>{children}</div>
