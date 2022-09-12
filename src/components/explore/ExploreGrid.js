@@ -11,8 +11,8 @@ export default function ExploreGrid() {
       {loading ? (
         <Spinner />
       ) : (
-        <article>
-          <div className='grid grid-cols-3  gap-4'>
+        <article className='max-w-2xl m-auto'>
+          <div className='grid grid-cols-3 gap-4'>
             {Array.from({ length: 20 }, () => getDefaultPost()).map((post) => (
               <GridPost key={post.id} post={post} />
             ))}
