@@ -13,7 +13,7 @@ export default function FollowSuggestions({ hideHeader }) {
   return (
     <div className='mb-8'>
       {!hideHeader && (
-        <h3 className='text-slate-600 mb-2'>Suggestions For You</h3>
+        <h3 className='text-slate-500 mb-2'>Suggestions For You</h3>
       )}
       {loading ? (
         <Spinner />

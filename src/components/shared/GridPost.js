@@ -1,9 +1,16 @@
 import React from 'react';
-import { CommentButton, LikeIcon, UnLikeIcon } from '../../utils/icons';
+import { useNavigate } from 'react-router-dom';
+import { CommentButton, UnLikeIcon } from '../../utils/icons';
 
 export default function GridPost({ post }) {
+  const navigate = useNavigate();
+
+  function handleOpenPostModal() {
+    navigate({ pathname: `/p/${post.id}`, state: { modal: true } });
+  }
+
   return (
-    <div className='relative'>
+    <div onClick={handleOpenPostModal} className='relative'>
       <div className='grid-flow-row content-evenly'>
         <div className='absolute w-full h-full hover:bg-[rgba(0,0,0,0.6)] cursor-pointer'>
           <div className='grid place-items-center grid-flow-col w-full h-full opacity-0 hover:opacity-100 justify-evenly'>

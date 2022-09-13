@@ -632,3 +632,32 @@ export const NextArrowIcon = (props) => {
     </svg>
   );
 };
+export const CloseIcon = (props) => {
+  return (
+    <svg
+      width='24'
+      height='24'
+      viewBox='0 0 56 55'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      {...props}
+    >
+      <line
+        x1='3.47487'
+        y1='2.52513'
+        x2='52.9723'
+        y2='52.0226'
+        stroke='black'
+        stroke-width='7'
+      />
+      <line
+        y1='-3.5'
+        x2='70'
+        y2='-3.5'
+        transform='matrix(-0.707107 0.707107 0.707107 0.707107 54.4974 5)'
+        stroke='black'
+        stroke-width='7'
+      />
+    </svg>
+  );
+};
